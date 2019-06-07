@@ -1,4 +1,9 @@
 # Starter pipeline
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    downloadPath: '$(System.ArtifactsDirectory)'
 - task: BinSkim@3
   inputs:
     InputType: 'CommandLine'
