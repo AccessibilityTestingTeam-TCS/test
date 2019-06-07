@@ -1,4 +1,7 @@
 # Starter pipeline
+- task: BinSkim@3
+  inputs:
+    InputType: 'CommandLine'
 - task: APIScan@1
   inputs:
     softwareFolder: '$(Build.StagingDirectory)'
