@@ -1,4 +1,8 @@
 # Starter pipeline
+- task: DownloadPipelineArtifact@1
+  inputs:
+    buildType: 'current'
+    targetPath: '$(System.ArtifactsDirectory)'
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
@@ -16,8 +20,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
+trigger: master
 
 pool:
   vmImage: 'ubuntu-latest'
